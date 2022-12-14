@@ -1,0 +1,35 @@
+// Стилі для списку іконок соц-мереж секції Команда (світлий фон) та Підвал (темний фон)
+
+.soc-list {
+    @include centerFlex($ai: null);
+    gap: 10px;
+
+    &__link {
+        height: 44px;
+        width: 44px;
+        padding: 12px;
+        border-radius: 50%;
+    }
+
+    &__link--light-bgr {
+        fill: #AFB1B8;
+        transition: fill 250ms var(--transition-timing-function), background-color 250ms var(--transition-timing-function);
+        
+        &:hover,
+        &:focus {
+            fill: var(--tertiary-bg-and-text-color);
+            background-color: var(--primary-accent-bg-and-text-color);
+        }
+    }
+
+    &__link--dark-bgr {
+        fill: var(--tertiary-bg-and-text-color);
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: background-color 250ms var(--transition-timing-function);
+
+        &:hover,
+        &:focus {
+            background-color: var(--primary-accent-bg-and-text-color);
+        }
+    }    
+}

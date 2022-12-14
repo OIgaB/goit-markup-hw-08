@@ -1,0 +1,47 @@
+/* Переваги студії */
+.advant-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media screen and (min-width: 1600px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+.advant-list {
+    gap: 30px;
+    @media screen and (min-width: 768px) {
+        @include centerFlex($ai: null);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        max-width: 450px;
+        @media screen and (min-width: 768px) {
+            max-width: 354px;
+        }
+        @media screen and (min-width: 1600px) {
+            max-width: 270px;
+        }
+    }
+
+    &__title {
+        @include font (null, 14px, 1.1);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__desc {
+        color: var(--secondary-text-color);
+        @include font (null, 14px, 1.7);
+    }
+
+    &__icon-wrap {
+        background-color: var(--secondary-bg-color);
+        height: 120px;
+        border-radius: 4px;
+        margin-bottom: 30px;
+        @include centerFlex ();
+    }
+}
+

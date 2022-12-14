@@ -1,0 +1,72 @@
+/* Перелік проектів сторінки Портоліо*/
+
+.main-container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.projects-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+    &__item {
+        background-color: var(--tertiary-bg-and-text-color);
+        width: calc((100% - 60px) / 3);
+        transition: box-shadow 250ms var(--transition-timing-function);
+        
+        &:hover {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+.project-item-visual__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Оверлей на картці*/
+.project-item-visual {
+    position: relative;
+    overflow: hidden;
+
+    &__overley {
+        position: absolute;
+        transform: translateY(0);
+        transition: transform 250ms var(--transition-timing-function), color 250ms var(--transition-timing-function), background-color 250ms var(--transition-timing-function);
+        padding: 63px 24px;
+        @include font (null, 18px, 1.6);
+
+        .projects-set__item:hover &,
+        .projects-set__item:focus & {
+            transform: translateY(-100%);
+            color: var(--tertiary-bg-and-text-color);
+            background-color: rgba(33, 150, 243, 0.9);
+        }
+    }
+}
+/* Описова частина карток */
+.project-item-meta {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    border: 1px solid #EEEEEE;
+
+    &__title {
+        @include font (null, 18px, 2, 0.06em);
+    }
+
+    &__text {
+        color: var(--secondary-text-color);
+        @include font (null, 16px, 1.9);
+    }
+}
+
+

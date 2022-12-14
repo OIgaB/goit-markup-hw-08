@@ -1,0 +1,21 @@
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./utils/placeholders";
+
+// @import "./base/normalize";
+// @import "./base/fonts";
+
+@import "./components/common/page-header";
+@import "./components/common/page-footer";
+@import "./components/common/logo";
+@import "./components/common/buttons";
+@import "./components/common/soc-icons";
+
+@import "./components/main-portfolio/btn-set";
+@import "./components/main-portfolio/card-set";
+
+@import "./components/main-studio/hero";
+@import "./components/main-studio/advantages-section";
+@import "./components/main-studio/activities-section";
+@import "./components/main-studio/team-section";
+@import "./components/main-studio/clients-section";

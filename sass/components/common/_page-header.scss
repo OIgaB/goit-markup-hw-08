@@ -1,0 +1,114 @@
+/*  Header  */
+.header-container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    @media screen and (min-width: 768px) {
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+    @media screen and (min-width: 1600px) {
+        padding-top: 24px;
+        padding-bottom: 25px;
+    }
+}
+.header-wrap {
+    @include centerFlex($jc: null);
+    @media screen and (min-width: 768px) and (max-width: 1599px){
+        justify-content: space-between;
+    }
+}
+.portfolio-header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+/* Панель навігації*/
+.nav {
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        gap: 50px;
+    }
+    
+    &__link {
+        position: relative;
+        color: var(--primary-text-color);
+        transition: color 250ms var(--transition-timing-function);
+        @include font (500, 14px, 1.1, 0.02em);
+        
+        &:hover,
+        &:focus {
+            color: var(--primary-accent-bg-and-text-color);
+        }
+        &--current {
+            color: var(--primary-accent-bg-and-text-color);
+        }
+        &--current::after {
+            position: absolute;
+            left: 0;
+            bottom: -33px;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-accent-bg-and-text-color);
+            border-radius: 2px;
+            opacity: 1;
+            transition: opacity 250ms var(--transition-timing-function);
+        }
+    }
+}
+/* Адреса та контакти */
+
+.header-contacts {
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+    @media screen and (min-width: 1600px) {
+        display: flex;        
+        gap: 50px;
+        margin-left: auto;
+    }
+    &__item:not(:last-child) {
+        @media screen and (min-width: 768px) and (max-width: 1599px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__link {
+        @include centerFlex($jc: null);
+        color: var(--secondary-text-color);
+        transition: color 250ms var(--transition-timing-function);
+        @media screen and (min-width: 768px) {
+            @include font (500, 12px, 1.17);
+        }
+        @media screen and (min-width: 1600px) {
+            @include font (500, 14px, 1.1);
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--primary-accent-bg-and-text-color);
+        }
+    }
+
+    &__icon-envelope {
+        fill: currentColor;
+        margin-right: 10px;
+
+        &:hover,
+        &:focus {
+            fill: var(--primary-accent-bg-and-text-color);
+        }
+    }
+
+    &__icon-smartphone {
+        fill: currentColor;
+        margin-right: 10px;
+
+        &:hover,
+        &:focus {
+            fill: var(--primary-accent-bg-and-text-color);
+        }    
+    }
+}

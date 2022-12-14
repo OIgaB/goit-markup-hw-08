@@ -1,0 +1,223 @@
+/* Герой */
+
+.hero-container {
+    // height: 600px;
+    // width: 1600px;
+    // margin-left: auto;
+    // margin-right: auto;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+        url('../images/hero.jpg');
+    background-color: #2F303A;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 118px;
+    padding-bottom: 118px;
+    @media screen and (min-width: 1600px) {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+}
+
+.container__hero-title {
+    color: var(--tertiary-bg-and-text-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 30px auto;
+    @include font (900, 26px, 1.6, 0.06em);
+    @media screen and (min-width: 1600px) {
+        @include font (900, 44px, 1.4, 0.06em);
+    }
+}
+
+/* Модальне вікно */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 250ms var(--transition-timing-function);
+    z-index: 1;
+
+    &.is-hidden {
+        opacity: 0;
+        transition: opacity 250ms var(--transition-timing-function);
+        pointer-events: none;
+    }    
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 528px;
+    min-height: 581px;
+    background-color: var(--tertiary-bg-and-text-color);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--transition-timing-function);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(0.9);
+        transition: transform 250ms var(--transition-timing-function);
+    }
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--tertiary-bg-and-text-color);
+    transition: fill 250ms var(--transition-timing-function);
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        fill: var(--primary-accent-bg-and-text-color);
+    }   
+}
+
+/* Форма модального вікна */
+.application-form {
+    padding: 40px;
+
+    &__header {
+        text-align: center;
+        @include font (700, 20px, 1.15);
+        margin-bottom: 12px;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    &__label-text {
+        margin-bottom: 4px;
+        @include font (null, 12px, 1.17, 0.01em);
+        color: #757575;
+    }
+
+    &__input-wrapper {
+        position: relative;
+    }
+
+    &__input {
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        height: 40px;
+        display: block;
+        width: 100%;
+        padding-left: 42px;
+        @include font (null, 12px, 1.17, 0.01em);
+        color: currentColor;
+        transition: border-color 250ms var(--transition-timing-function), outline-color 250ms var(--transition-timing-function);
+
+        &:hover,
+        &:focus {
+            border-color: var(--primary-accent-bg-and-text-color);
+        }
+        &:focus-within {
+            border: none;
+            outline: 1px solid var(--primary-accent-bg-and-text-color);
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        transition: border-color 250ms var(--transition-timing-function), fill 250ms var(--transition-timing-function);
+        
+        &:hover,
+        &:focus {
+            fill: var(--primary-accent-bg-and-text-color);
+        }
+        .application-form__input:hover + &,
+        .application-form__input:focus + & {
+            fill: var(--primary-accent-bg-and-text-color);
+        }
+    }
+
+    &__comment {
+        width: 100%;
+        height: 120px;
+        resize: none;
+        padding: 12px 16px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        @include font (null, 12px, 1.17, 0.01em);
+        color: currentColor;
+        transition: border-color 250ms var(--transition-timing-function), outline-color 250ms var(--transition-timing-function);
+        
+        &:hover,
+        &:focus {
+            border-color: var(--primary-accent-bg-and-text-color);
+        }
+        &:focus-within {
+            border: none;
+            outline: 1px solid var(--primary-accent-bg-and-text-color);
+        }
+        &::placeholder {
+            @include font (400, 12px, 1.2, 0.01em);
+            color: rgba(117, 117, 117, 0.5);
+        }
+    }
+
+    &__label-terms {
+        position: relative;
+        @include font (null, 14px, 1.7);
+        color: var(--secondary-text-color);
+        margin-top: 10px;
+        margin-bottom: 30px;
+        display: block;
+        padding-left: 37px;
+    }
+
+    &__agreement-link {
+        text-decoration: underline;
+        color: var(--primary-accent-bg-and-text-color);
+        display: inline-block;
+    }
+
+    &__checkbox {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    &__checkbox-icon {
+        position: absolute;
+        top: 50%;
+        left: 14px;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 15px;
+        border: 2px solid var(--primary-text-color);
+        border-radius: 2px;
+        transition: background-color 250ms var(--transition-timing-function), border-color 250ms var(--transition-timing-function);
+
+        .application-form__checkbox:checked ~ & {
+            background-color: var(--primary-accent-bg-and-text-color);
+            border: 1px solid transparent;
+        }
+    }
+}
+
+/* Стилі для кнопки-відправки форми в секці Common */

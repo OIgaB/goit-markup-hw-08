@@ -1,0 +1,85 @@
+/* Команда студії */
+
+.team-container {
+    background-color: var(--secondary-bg-color);
+    outline: 2px solid blue;
+    padding-top: 60px;
+    padding-bottom: 60px;
+        @media screen and (min-width: 1600px) {
+            padding-top: 94px;
+            padding-bottom: 94px;
+        }
+}
+
+.container__team-section-title {
+    text-align: center;
+    margin-bottom: 30px;    
+    @include font (null, 28px, 1.8);
+    @media screen and (min-width: 1600px) {
+        margin-bottom: 50px;
+        @include font (null, 36px, 1.2);
+    }
+}
+
+.team-list {
+    gap: 30px;
+    @media screen and (min-width: 768px) {
+        @include centerFlex($ai: null);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 450px;
+        height: 622px;
+        @media screen and (min-width: 768px) {
+            width: 354px;
+            height: 536px;
+        }
+        @media screen and (min-width: 1600px) {
+            width: 270px;
+            height: 428px;
+        }
+        background-color: var(--tertiary-bg-and-text-color);
+        @media screen and (min-width: 768px) {
+            flex-basis: calc((100% - 90px) / 2);
+        }
+        @media screen and (min-width: 1600px) {
+            flex-basis: calc((100% - 550px) / 4);
+        }
+    }
+    &__item:not(:last-child) {
+        @media screen and (max-width: 767px) {
+            margin-bottom: 30px;
+        }
+    }
+    
+    &__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__meta {
+        padding-top: 30px;
+        padding-bottom: 24px;
+        
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+        @media screen and (min-width: 1600px) {
+            padding-bottom: 30px;
+        }
+    }
+
+    &__name {
+        @include font (500, 16px, 1.2);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__position {
+        color: var(--secondary-text-color);
+        @include font (null, 16px, 1.2);
+        text-align: center;
+        margin-bottom: 16px;
+    }
+}
