@@ -2,8 +2,9 @@
 .logo {
     color: var(--primary-accent-bg-and-text-color);
     font-family: 'Raleway', sans-serif;
-    @include font (700, 26px, 1.2);
-    @media screen and (min-width: 1600px) {
+    @include font (700, 24px, 1.17);
+    @include desctop {
+        @include font (700, 26px, 1.2);
         margin-right: 93px;
     }
 

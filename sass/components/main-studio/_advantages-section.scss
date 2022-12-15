@@ -2,7 +2,7 @@
 .advant-container {
     padding-top: 60px;
     padding-bottom: 60px;
-    @media screen and (min-width: 1600px) {
+    @include desctop {
         padding-top: 94px;
         padding-bottom: 94px;
     }
@@ -10,17 +10,17 @@
 
 .advant-list {
     gap: 30px;
-    @media screen and (min-width: 768px) {
+    @include tablet {
         @include centerFlex($ai: null);
         flex-wrap: wrap;
     }
 
     &__item {
         max-width: 450px;
-        @media screen and (min-width: 768px) {
+        @include tablet {
             max-width: 354px;
         }
-        @media screen and (min-width: 1600px) {
+        @include desctop {
             max-width: 270px;
         }
     }

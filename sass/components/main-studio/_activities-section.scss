@@ -3,7 +3,7 @@
 .activities-container {
     padding-bottom: 94px;
     display: none;
-    @media screen and (min-width: 1600px) {
+    @include desctop {
         display: block;
     }
 }
