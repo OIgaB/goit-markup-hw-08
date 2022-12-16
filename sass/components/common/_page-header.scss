@@ -13,9 +13,8 @@
 }
 .header-wrap {
     position: relative;
-    outline: 1px solid royalblue;
     @include centerFlex($jc: null);
-    @media screen and (min-width: $tablet) and (max-width: 1599px) {
+    @media screen and (min-width: 768px) and (max-width: 1599px) {
         justify-content: space-between;
     }
     @include desctop {
@@ -95,6 +94,8 @@
     background-color: var(--tertiary-bg-and-text-color);
     transform: translateY(-100%);
     transition: transform 300ms var(--transition-timing-function);
+    z-index: 1;
+    overflow: hidden;
     @include tablet {
         display: none;
     }
@@ -176,7 +177,7 @@
         margin-left: auto;
     }
     &__item:not(:last-child) {
-        @media screen and (min-width: $tablet) and (max-width: 1599px) {
+        @media screen and (min-width: 768px) and (max-width: 1599px) {
             margin-bottom: 10px;
         }
     }

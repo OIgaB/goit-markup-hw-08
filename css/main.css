@@ -49,7 +49,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   width: 480px;
-  outline: 2px solid red;
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -82,7 +81,6 @@ body {
 
 .header-wrap {
   position: relative;
-  outline: 1px solid royalblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,6 +187,8 @@ body {
   transition: -webkit-transform 300ms var(--transition-timing-function);
   transition: transform 300ms var(--transition-timing-function);
   transition: transform 300ms var(--transition-timing-function), -webkit-transform 300ms var(--transition-timing-function);
+  z-index: 1;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .menu-container {
@@ -783,14 +783,44 @@ body {
 
 /* Герой */
 .hero-container {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/hero.jpg");
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../../../images/hero-mob.jpg");
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../../images/hero-mob.jpg");
   background-color: #2F303A;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 118px;
   padding-bottom: 118px;
+}
+@media screen and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../../../images/hero@2x-mob.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../../images/hero@2x-mob.jpg");
+  }
+}
+@media screen and (min-width: 480px) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../../../images/hero-tab.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../../images/hero-tab.jpg");
+  }
+}
+@media screen and (min-width: 480px) and (min-device-pixel-ratio: 2), screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 480px) and (min-resolution: 192dpi), screen and (min-width: 480px) and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../../../images/hero@2x-tab.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../../images/hero@2x-tab.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../../../images/hero-desc.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../../images/hero-desc.jpg");
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../../../images/hero@2x-desc.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../../images/hero@2x-desc.jpg");
+  }
 }
 @media screen and (min-width: 1600px) {
   .hero-container {
@@ -842,15 +872,15 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 528px;
-  min-height: 581px;
-  background-color: var(--tertiary-bg-and-text-color);
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   -webkit-transition: -webkit-transform 250ms var(--transition-timing-function);
   transition: -webkit-transform 250ms var(--transition-timing-function);
   transition: transform 250ms var(--transition-timing-function);
   transition: transform 250ms var(--transition-timing-function), -webkit-transform 250ms var(--transition-timing-function);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--tertiary-bg-and-text-color);
   border-radius: 4px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -1177,7 +1207,6 @@ body {
 /* Команда студії */
 .team-container {
   background-color: var(--secondary-bg-color);
-  outline: 2px solid blue;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -1220,21 +1249,7 @@ body {
   }
 }
 .team-list__item {
-  width: 450px;
-  height: 622px;
   background-color: var(--tertiary-bg-and-text-color);
-}
-@media screen and (min-width: 768px) {
-  .team-list__item {
-    width: 354px;
-    height: 536px;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .team-list__item {
-    width: 270px;
-    height: 428px;
-  }
 }
 @media screen and (min-width: 768px) {
   .team-list__item {
@@ -1291,7 +1306,6 @@ body {
 .clients-container {
   padding-top: 60px;
   padding-bottom: 60px;
-  outline: 2px solid yellowgreen;
 }
 @media screen and (min-width: 1600px) {
   .clients-container {

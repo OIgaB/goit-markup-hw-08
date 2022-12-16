@@ -2,7 +2,6 @@
 
 .team-container {
     background-color: var(--secondary-bg-color);
-    outline: 2px solid blue;
     padding-top: 60px;
     padding-bottom: 60px;
         @include desctop {
@@ -29,16 +28,6 @@
     }
 
     &__item {
-        width: 450px;
-        height: 622px;
-        @include tablet {
-            width: 354px;
-            height: 536px;
-        }
-        @include desctop {
-            width: 270px;
-            height: 428px;
-        }
         background-color: var(--tertiary-bg-and-text-color);
         @include tablet {
             flex-basis: calc((100% - 90px) / 2);
@@ -62,7 +51,6 @@
     &__meta {
         padding-top: 30px;
         padding-bottom: 24px;
-        
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
         border-radius: 0px 0px 4px 4px;
         @include desctop {

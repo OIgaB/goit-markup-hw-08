@@ -9,20 +9,20 @@
 .footer-wrap {
     @include centerFlex();
     flex-direction: column;
-    @media screen and (min-width: $desctop) {
+    @include desctop {
         @include centerFlex($ai: baseline, $jc: flex-start);
         flex-direction: row;
     }
 }
 .footer-meta {
     text-align: center;
-    @media screen and (min-width: $tablet) {
+    @include tablet {
         display: flex;
         align-items: baseline;    
         gap: 160px;    
         margin-bottom: 60px;
     }
-    @media screen and (min-width: $desctop) {
+    @include desctop {
         text-align: left;
         gap: 70px;
         margin-bottom: 0;
@@ -46,7 +46,7 @@
     transition: color 250ms var(--transition-timing-function);
     @include font (400, 14px, 1.7);
     margin-top: 8px;
-    @media screen and (min-width: $desctop) {
+    @include desctop {
         margin-top: 9px;
     }
     &:hover,
@@ -60,7 +60,7 @@
         margin-top: 60px;
         margin-bottom: 60px;
     }
-    @media screen and (min-width: $desctop) {
+    @include desctop {
         margin-right: 90px;
     }
 
@@ -71,7 +71,7 @@
         // padding-top: 12px;
         text-align: center;
         margin-bottom: 20px;
-        @media screen and (min-width: $desctop) {
+        @include desctop {
             text-align: left;
         } 
     }
@@ -131,7 +131,7 @@
         height: 50px;
         display: inline-block;
         margin-top: 20px;
-        @media screen and (min-width: $tablet) and (max-width: 1599px){
+        @media screen and (min-width: 768px) and (max-width: 1599px){
             display: block;
             margin: 0 auto;
         }

@@ -1,20 +1,40 @@
 /* Герой */
 
 .hero-container {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4),
-            rgba(47, 48, 58, 0.4)),
-        url('../images/hero.jpg');
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+        url('../../../images/hero-mob.jpg');
+    @include retina {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../../../images/hero@2x-mob.jpg');
+    }
+    @include mobile {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url('../../../images/hero-tab.jpg');
+            @include retina {
+                background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                    url('../../../images/hero@2x-tab.jpg');
+            }
+    }
+
+    @include tablet {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+            url('../../../images/hero-desc.jpg');
+        @include retina {
+            background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                url('../../../images/hero@2x-desc.jpg');
+        }
+    }
+
     background-color: #2F303A;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 118px;
     padding-bottom: 118px;
+
     @include desctop {
         padding-top: 200px;
         padding-bottom: 200px;
-        // height: 600px;
-        // width: 1600px;
     }
 }
 
@@ -52,12 +72,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--transition-timing-function);
     min-width: 528px;
     min-height: 581px;
     background-color: var(--tertiary-bg-and-text-color);
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms var(--transition-timing-function);
-    border-radius: 4px;
+        border-radius: 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     
     .backdrop.is-hidden & {
