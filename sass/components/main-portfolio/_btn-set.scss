@@ -2,9 +2,16 @@
 
 .portfolio-btn-list {
     @include centerFlex($ai: null);
+    flex-wrap: wrap;
+    justify-content: flex-start;    
     gap: 8px;
     margin-bottom: 50px;
-
+    padding-right: 124px;
+    @include tablet {
+        justify-content: center;
+        padding-right: 0;
+    }
+    
     &__item {
         background-color: var(--secondary-bg-color);
         transition: color 250ms var(--transition-timing-function), background-color 250ms var(--transition-timing-function), box-shadow 250ms var(--transition-timing-function);

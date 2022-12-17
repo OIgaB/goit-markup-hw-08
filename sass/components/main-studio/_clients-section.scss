@@ -27,10 +27,8 @@
     }
 
     &__item {
-        @media screen and (max-width: 767px) {
-            flex-basis: calc((100% - 60px) / 2);
-        }
-        @media screen and (min-width: 768px) and (max-width: 1599px){
+        flex-basis: calc((100% - 60px) / 2);
+        @media screen and (min-width: 768px) and (max-width: 1599px) {
             flex-basis: calc((100% - 90px) / 3);
         }
     }    
@@ -44,10 +42,10 @@
         height: 92px;
         width: 210px;
         @include tablet {
-            width: 226px;
+            flex-basis: 226px;
         }
         @include desctop {
-            width: 170px;
+            flex-basis: 170px;
         }
 
             &:hover,

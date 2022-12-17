@@ -15,7 +15,6 @@
                     url('../images/hero@2x-tab.jpg');
             }
     }
-
     @include tablet {
         background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
             url('../images/hero-desc.jpg');
@@ -24,14 +23,12 @@
                 url('../images/hero@2x-desc.jpg');
         }
     }
-
     background-color: #2F303A;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 118px;
     padding-bottom: 118px;
-
     @include desctop {
         padding-top: 200px;
         padding-bottom: 200px;
@@ -74,8 +71,14 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms var(--transition-timing-function);
-    min-width: 528px;
-    min-height: 581px;
+    @include mobile {
+        min-width: 450px;
+        min-height: 609px;
+    }
+    @include desctop {
+        min-width: 528px;
+        min-height: 581px;        
+    }
     background-color: var(--tertiary-bg-and-text-color);
         border-radius: 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);

@@ -1,8 +1,12 @@
 /* Перелік проектів сторінки Портоліо*/
 
 .main-container {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include desctop {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
 }
 
 .projects-container {
@@ -11,13 +15,20 @@
 }
 
 .projects-set {
-    display: flex;
-    flex-wrap: wrap;
     gap: 30px;
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+    }
     
     &__item {
         background-color: var(--tertiary-bg-and-text-color);
-        width: calc((100% - 60px) / 3);
+        @include tablet {
+            width: calc((100% - 30px) / 2);
+        }
+        @include desctop {
+            width: calc((100% - 60px) / 3);
+        }
         transition: box-shadow 250ms var(--transition-timing-function);
         
         &:hover {
@@ -41,7 +52,14 @@
         position: absolute;
         transform: translateY(0);
         transition: transform 250ms var(--transition-timing-function), color 250ms var(--transition-timing-function), background-color 250ms var(--transition-timing-function);
-        padding: 63px 24px;
+        padding: 77px 24px;
+        @include tablet {
+            padding-top: 49px;
+        }
+        @include desctop {
+            padding-top: 63px;
+            padding-bottom: 63px;
+        }
         @include font (null, 18px, 1.6);
 
         .projects-set__item:hover &,
@@ -49,6 +67,7 @@
             transform: translateY(-100%);
             color: var(--tertiary-bg-and-text-color);
             background-color: rgba(33, 150, 243, 0.9);
+            height: 100%;
         }
     }
 }
