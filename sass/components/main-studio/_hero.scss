@@ -198,7 +198,7 @@
 
     &__label-terms {
         position: relative;
-        @include font (null, 14px, 1.7);
+        @include font (null, 12px, 1.7);
         color: var(--secondary-text-color);
         margin-top: 10px;
         margin-bottom: 30px;

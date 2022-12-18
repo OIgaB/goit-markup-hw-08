@@ -30,10 +30,10 @@
     &__item {
         background-color: var(--tertiary-bg-and-text-color);
         @include tablet {
-            flex-basis: calc((100% - 90px) / 2);
+            flex-basis: calc((100% - 30px) / 2);
         }
         @include desctop {
-            flex-basis: calc((100% - 550px) / 4);
+            flex-basis: calc((100% - 90px) / 4);
         }
     }
     &__item:not(:last-child) {

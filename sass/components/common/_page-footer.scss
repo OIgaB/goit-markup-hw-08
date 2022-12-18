@@ -26,7 +26,7 @@
         text-align: left;
         gap: 70px;
         margin-bottom: 0;
-        margin-left: 200px;
+        margin-right: 90px;
     }
 }
 
@@ -60,15 +60,11 @@
         margin-top: 60px;
         margin-bottom: 60px;
     }
-    @include desctop {
-        margin-right: 90px;
-    }
 
     &__text {
         @include font (700, 14px, 1.14, null);
         text-transform: uppercase;
         color: var(--tertiary-bg-and-text-color);
-        // padding-top: 12px;
         text-align: center;
         margin-bottom: 20px;
         @include desctop {
@@ -86,14 +82,22 @@
         width: 663px;
         text-align: left;
     }
-
     &__text {
         @include font (700, 14px, 1.14);
         text-transform: uppercase;
         color: var(--tertiary-bg-and-text-color);
         margin-bottom: 20px;
     }
-
+    &__wrap {
+        @include desctop {
+        display: flex;
+        }
+    }
+    &__label {
+        @include desctop {
+            margin-right: 12px;
+        }    
+    }
     &__input {
         height: 50px;
         width: 100%;
@@ -103,7 +107,6 @@
         }
         @include desctop {
             width: 358px;
-            margin-right: 12px;
             margin-bottom: 0;
         }
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -131,7 +134,7 @@
         height: 50px;
         display: inline-block;
         margin-top: 20px;
-        @media screen and (min-width: 768px) and (max-width: 1599px){
+        @media screen and (min-width: 768px) and (max-width: 1199px){
             display: block;
             margin: 0 auto;
         }
@@ -139,7 +142,6 @@
             margin-top: 0;
         }
     }
-
     &__btn {
         width: 200px;
         height: 50px;

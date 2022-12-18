@@ -14,12 +14,8 @@
 .header-wrap {
     position: relative;
     @include centerFlex($jc: null);
-    @media screen and (min-width: 768px) and (max-width: 1599px) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         justify-content: space-between;
-    }
-    @include desctop {
-        padding-left: 215px;
-        padding-right: 215px;
     }
 }
 .portfolio-header {
@@ -177,7 +173,7 @@
         margin-left: auto;
     }
     &__item:not(:last-child) {
-        @media screen and (min-width: 768px) and (max-width: 1599px) {
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
             margin-bottom: 10px;
         }
     }

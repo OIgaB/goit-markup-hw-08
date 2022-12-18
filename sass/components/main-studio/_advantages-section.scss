@@ -25,14 +25,16 @@
         }
     }
     &__item:not(:last-child) {
-        @media screen and (max-width: 479px) {
-            margin-bottom: 30px;
+        margin-bottom: 30px;
+        @include mobile {
+            margin-bottom: 0;
         }
     }
 
     &__title {
-        @media screen and (max-width: 479px) {
-        text-align: center; 
+        text-align: center;
+        @include tablet {
+            text-align: left; 
         }
         @include font (null, 14px, 1.1);
         text-transform: uppercase;

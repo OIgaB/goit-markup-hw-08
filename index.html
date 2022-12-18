@@ -229,7 +229,7 @@
                 <h2 class="container__team-section-title">Наша команда</h2>
                 <ul class="team-list">
                     <li class="team-list__item">
-                        <picture>
+                        <picture class="team-list__image">
                             <source
                                 srcset="./images/team-card-1-w270-h260-desc.jpg 1x, ./images/team-card-1@2x-w540-h520-desc.jpg 2x"
                                 media="(min-width: 1600px)"
@@ -284,7 +284,7 @@
                         </div>
                     </li>
                     <li class="team-list__item">
-                        <picture>
+                        <picture class="team-list__image">
                             <source srcset="./images/team-card-2-w270-h260-desc.jpg 1x, ./images/team-card-2@2x-w540-h520-desc.jpg 2x"
                                 media="(min-width: 1600px)" />
                             <source srcset="./images/team-card-2-w354-h374-tab.jpg 1x , ./images/team-card-2@2x-w708-h748-tab.jpg 2x"
@@ -329,7 +329,7 @@
                         </div>
                     </li>
                     <li class="team-list__item">
-                        <picture>
+                        <picture class="team-list__image">
                             <source srcset="./images/team-card-3-w270-h260-desc.jpg 1x, ./images/team-card-3@2x-w540-h520-desc.jpg 2x"
                                 media="(min-width: 1600px)" />
                             <source srcset="./images/team-card-3-w354-h374-tab.jpg 1x , ./images/team-card-3@2x-w708-h748-tab.jpg 2x"
@@ -374,7 +374,7 @@
                         </div>
                     </li>
                     <li class="team-list__item">
-                        <picture>
+                        <picture class="team-list__image">
                             <source srcset="./images/team-card-4-w270-h260-desc.jpg 1x, ./images/team-card-4@2x-w540-h520-desc.jpg 2x"
                                 media="(min-width: 1600px)" />
                             <source srcset="./images/team-card-4-w354-h374-tab.jpg 1x , ./images/team-card-4@2x-w708-h748-tab.jpg 2x"
@@ -524,14 +524,16 @@
             <div class="signup-form">
                 <form name="signup-form" autocomplete="off">
                     <p class="signup-form__text">Підпишіться на розсилку</p>
-                    <label class="signup-form__label">
-                        <input type="email" name="email" placeholder="E-mail" class="signup-form__input">
-                    </label>
-                    <div class="signup-form__btn-wrap">
-                    <button type="submit" class="signup-form__btn">Підписатися</button>
-                    <svg aria-label="паперовий літачок" class="signup-form__btn-icon" width="24px" height="24px">
-                        <use href="./images/sprite.svg#icon-send"></use>
-                    </svg> 
+                    <div class="signup-form__wrap">
+                        <label class="signup-form__label">
+                            <input type="email" name="email" placeholder="E-mail" class="signup-form__input">
+                        </label>
+                        <div class="signup-form__btn-wrap">
+                            <button type="submit" class="signup-form__btn">Підписатися</button>
+                            <svg aria-label="паперовий літачок" class="signup-form__btn-icon" width="24px" height="24px">
+                                <use href="./images/sprite.svg#icon-send"></use>
+                            </svg> 
+                        </div>
                     </div>
                 </form>
             </div>
